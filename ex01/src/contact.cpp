@@ -37,3 +37,10 @@ void    Contact::displayContact() {
     std::cout << "Phone Number: " << phoneNumber << std::endl;
     std::cout << "Darkest Secret: " << darkestSecret << std::endl;
 }
+void    Contact::displayContact() {
+    std::cout << "First Name: " << firstName << std::endl;
+    std::cout << "Last Name: " << lastName << std::endl;
+    std::cout << "Nickname: " << nickName << std::endl;
+    std::cout << "Phone Number: " << phoneNumber << std::endl;
+    std::cout << "Darkest Secret: " << darkestSecret << std::endl;
+}
