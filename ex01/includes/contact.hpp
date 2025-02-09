@@ -1,5 +1,5 @@
-
-# include <string>
+#include <string>
+#include <iostream>
 
 class Contact {
     private:

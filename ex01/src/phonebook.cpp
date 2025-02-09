@@ -1,14 +1,4 @@
-
 #include "../includes/phonebook.hpp"
-#include <iostream>
-
-void printSpaces(int n) {
-    if (n <= 0)
-        return ;
-    for (int i = 0; i < n; i++) {
-        std::cout << " ";
-    }
-}
 
 void    PhoneBook::addContact() {
     if (totalContacts >= MAXCONTACTS)
@@ -19,26 +9,38 @@ void    PhoneBook::addContact() {
     std::cout << "Contact addded successfully." << std::endl;
 }
 
+void    PhoneBook::requestIndex()
+{
+    std::string input;
+
+    while (1)
+    {
+        std::cout << "Enter index: ";
+        std::getline(std::cin, input);
+        if (!ft_isdigit(input) || !ft_isValid(input)) {
+            std::cout << "index is not valid!" << std::endl;
+            continue;
+        }
+        this->requestedIndex = std::stoi(input);
+        if (this->requestedIndex > totalContacts || !this->requestedIndex) {
+            std::cout << "index is not valid!" << std::endl;
+            continue;
+        }
+        break;
+    }
+}
 
 void    PhoneBook::searchContact() {
     if (totalContacts == 0) {
         std::cout << "PhoneBook is empty!" << std::endl;
-        return;
+        return ;
     }
-    std::cout << " ___________________________________________ " << std::endl;
-	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-	std::cout << "|----------|----------|----------|----------|" << std::endl;
+    printTable();
     for (int i = 0; i < MAXCONTACTS && i < totalContacts; i++) {
         contacts[i].displayOnTable(i + 1);
     }
     std::cout << " ___________________________________________ " << std::endl;
-    std::string input;
-    std::cout << "Enter index: ";
-    std::getline(std::cin, input);
-    int index = std::stoi(input);
-    if ((index > totalContacts || index > MAXCONTACTS) || index <= 0) {
-        std::cout << "index is not valid!" << std::endl; 
-        return ;
-    }
-    contacts[index - 1].displayContact();
+
+    this->requestIndex();
+    contacts[this->requestedIndex - 1].displayContact();
 }

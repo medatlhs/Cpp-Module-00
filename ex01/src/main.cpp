@@ -1,4 +1,3 @@
-
 #include "../includes/phonebook.hpp"
 #include <iostream>
 
@@ -6,7 +5,6 @@ int main() {
     PhoneBook   myPhoneBook;
     std::string command;
 
-    myPhoneBook.init();
     while(true)
     {
         std::cout << "Enter a command: ";
@@ -15,6 +13,8 @@ int main() {
             myPhoneBook.addContact();
         else if (command == "SEARCH")
             myPhoneBook.searchContact();
+        else if (command == "EXIT")
+            return 0;
     }
-    return (0);
+    return 0;
 }

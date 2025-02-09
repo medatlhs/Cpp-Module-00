@@ -1,6 +1,6 @@
-SRC = ./src/main.cpp ./src/contact.cpp ./src/phonebook.cpp
+SRC = ./src/main.cpp ./src/contact.cpp ./src/phonebook.cpp ./src/utils.cpp
 CC = c++
-CPPFLAGS = -Wall -Wextra -Werror 
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 NAME = crappy
 
 OBJ = ${SRC:.cpp=.o}

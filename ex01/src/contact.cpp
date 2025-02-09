@@ -1,6 +1,4 @@
-
 #include "../includes/contact.hpp"
-#include <iostream>
 
 void    Contact::insertContact() {
     std::cout << "Enter first name: ";
