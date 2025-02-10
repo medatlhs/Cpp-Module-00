@@ -28,7 +28,7 @@ void    Contact::displayOnTable(int index) {
     std::cout << "|" << std::endl;
 }
 
-void    Contact::displayContact() {
+void    Contact::displayFullContact() {
     std::cout << "First Name: " << firstName << std::endl;
     std::cout << "Last Name: " << lastName << std::endl;
     std::cout << "Nickname: " << nickName << std::endl;

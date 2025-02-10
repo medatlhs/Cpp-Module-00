@@ -39,8 +39,6 @@ void    PhoneBook::searchContact() {
     for (int i = 0; i < MAXCONTACTS && i < totalContacts; i++) {
         contacts[i].displayOnTable(i + 1);
     }
-    std::cout << " ___________________________________________ " << std::endl;
-
     this->requestIndex();
-    contacts[this->requestedIndex - 1].displayContact();
+    contacts[this->requestedIndex - 1].displayFullContact();
 }

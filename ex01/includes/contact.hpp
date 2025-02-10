@@ -11,7 +11,7 @@ class Contact {
 
     public:
         void insertContact();
-        void displayContact();
+        void displayFullContact();
         void displayOnTable(int index);
 };
 

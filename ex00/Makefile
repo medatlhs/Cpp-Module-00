@@ -8,7 +8,7 @@ OBJ = ${SRC:.cpp=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-		g++ ${CPPFLAGS} ${OBJ} -o ${NAME}
+		${CC} ${CPPFLAGS} ${OBJ} -o ${NAME}
 
 clean:
 		rm -f ${OBJ}
