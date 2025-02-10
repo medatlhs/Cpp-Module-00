@@ -1,5 +1,6 @@
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -7,7 +8,15 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 void Account::_displayTimestamp(void) {
-    std::cout << "[1234567898] "; 
+    std::time_t passedSeconds = std::time(0);
+    std::tm     *localTime = std::localtime(&passedSeconds);
+
+    std::cout << "[" << 1900 + localTime->tm_year;
+    std::cout << localTime->tm_mon + 1;
+    std::cout << localTime->tm_mday << "_";
+    std::cout << localTime->tm_hour;
+    std::cout << localTime->tm_min;
+    std::cout << localTime->tm_sec << "] ";
 }
 
 Account::Account(int initial_deposit) {
@@ -41,7 +50,7 @@ void Account::makeDeposit(int deposit) {
 
 bool Account::makeWithdrawal(int withdrawal) {
     std::cout << "index:" << _accountIndex << ";p_amount:" << checkAmount() << ";withdrawal:";
-    if(withdrawal > _amount);
+    if(withdrawal > _amount)
     {
         std::cout << "refused" << std::endl;
         return (false);
