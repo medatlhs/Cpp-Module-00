@@ -1,3 +1,6 @@
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include <string>
 #include <iostream>
 #include "contact.hpp"
@@ -24,3 +27,5 @@ bool    ft_isdigit(std::string input);
 bool    ft_isValid(std::string input);
 void    printSpaces(int n);
 void    printTable();
+
+#endif

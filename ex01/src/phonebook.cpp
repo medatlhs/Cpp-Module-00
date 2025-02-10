@@ -16,7 +16,9 @@ void    PhoneBook::requestIndex()
     while (1)
     {
         std::cout << "Enter index: ";
-        std::getline(std::cin, input);
+        if (!std::getline(std::cin, input)) {
+            std::cout << std::endl; exit(0);
+        }
         if (!ft_isdigit(input) || !ft_isValid(input)) {
             std::cout << "index is not valid!" << std::endl;
             continue;

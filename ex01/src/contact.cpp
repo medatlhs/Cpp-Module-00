@@ -1,17 +1,5 @@
 #include "../includes/contact.hpp"
-
-void    Contact::insertContact() {
-    std::cout << "Enter first name: ";
-    std::getline(std::cin, firstName);
-    std::cout << "Enter last name: ";
-    std::getline(std::cin, lastName);
-    std::cout << "Enter nick name: ";
-    std::getline(std::cin, nickName);
-    std::cout << "Enter phone number: ";
-    std::getline(std::cin, phoneNumber);
-    std::cout << "Enter darkest secret: ";
-    std::getline(std::cin, darkestSecret);
-}
+#include "../includes/phonebook.hpp"
 
 void    Contact::displayOnTable(int index) {
     std::cout << "|";
@@ -35,3 +23,27 @@ void    Contact::displayFullContact() {
     std::cout << "Phone Number: " << phoneNumber << std::endl;
     std::cout << "Darkest Secret: " << darkestSecret << std::endl;
 }
+
+void    Contact::insertContact() {
+    while (1) {
+        std::cout << "Enter first name: ";
+        if (!std::getline(std::cin, firstName)) { std::cout << std::endl; exit(0); }
+        if (firstName.empty()) { std::cout << "Can't be empty!\n"; continue;}
+        break ;
+    }
+    
+    std::cout << "Enter last name: ";
+    if (!std::getline(std::cin, lastName)) { std::cout << std::endl; exit(0); }
+    std::cout << "Enter nick name: ";
+    if (!std::getline(std::cin, nickName)) { std::cout << std::endl; exit(0); }
+    while (1) {
+        std::cout << "Enter phone number: ";
+        if (!std::getline(std::cin, phoneNumber)) { std::cout << std::endl; exit(0); }
+        if (phoneNumber.empty()) { std::cout << "can't be empty!\n"; continue; }
+        if (!ft_isdigit(phoneNumber)) { std::cout << "Invlaid phone number!\n"; continue; }
+        break ;
+    }
+    std::cout << "Enter darkest secret: ";
+    if (!std::getline(std::cin, darkestSecret)) { std::cout << std::endl; exit(0); }
+}
+
