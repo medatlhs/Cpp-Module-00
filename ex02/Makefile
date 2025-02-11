@@ -2,7 +2,7 @@ SRC = ./src/Account.cpp ./src/tests.cpp
 INCLUDE = ./includes/Account.hpp
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
-NAME = program
+NAME = exec
 
 OBJ = ${SRC:.cpp=.o}
 
