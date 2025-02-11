@@ -24,40 +24,35 @@ void    Contact::displayFullContact() {
     std::cout << "Darkest Secret: " << darkestSecret << std::endl;
 }
 
-void    Contact::insertContact() {
-    while (1) {
-        std::cout << "Enter first name: ";
-        if (!std::getline(std::cin, firstName)) { 
+std::string getInput(std::string prompt, int flag)
+{
+    std::string input;
+
+    while (true)
+    {
+        std::cout << prompt;
+        if (!std::getline(std::cin, input)) {
             std::cout << std::endl; exit(0);
         }
-        if (!firstName.empty())
-            break ;
-        std::cout << "Can't be empty!\n";
-    }
-    std::cout << "Enter last name: ";
-    if (!std::getline(std::cin, lastName)) { 
-        std::cout << std::endl;
-        exit(0);
-    }
-    std::cout << "Enter nick name: ";
-    if (!std::getline(std::cin, nickName)) { 
-            std::cout << std::endl; exit(0);
-    }
-    while (1) {
-        std::cout << "Enter phone number: ";
-        if (!std::getline(std::cin, phoneNumber)) {
-            std::cout << std::endl; exit(0); 
+        if (input.empty() && (flag || flag == 2)) {
+            std::cout << "Can't be empty!\n"; continue;
         }
-        if (phoneNumber.empty()){ 
-            std::cout << "can't be empty!\n"; continue ;
-        }
-        if (!ft_isdigit(phoneNumber)){ 
-            std::cout << "Invlaid phone number!\n"; continue ;
+        if (flag == 2)
+        {
+            if (!ft_isdigit(input)){ 
+                std::cout << "Invlaid phone number!\n"; continue ;
+            }
         }
         break ;
     }
-    std::cout << "Enter darkest secret: ";
-    if (!std::getline(std::cin, darkestSecret)) {
-        std::cout << std::endl; exit(0);
-    }
+    return (input);
+}
+
+void    Contact::insertContact() {
+
+    firstName = getInput("Enter first name: ", 1);
+    lastName = getInput("Enter last name: ", 0);
+    nickName = getInput("Enter nick name: ", 0);
+    phoneNumber = getInput("Enter phone number: ", 2);
+    darkestSecret = getInput("Enter darkest secret: ", 0);
 }
