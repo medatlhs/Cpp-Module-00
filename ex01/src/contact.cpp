@@ -31,7 +31,6 @@ void    Contact::insertContact() {
         if (firstName.empty()) { std::cout << "Can't be empty!\n"; continue;}
         break ;
     }
-    
     std::cout << "Enter last name: ";
     if (!std::getline(std::cin, lastName)) { std::cout << std::endl; exit(0); }
     std::cout << "Enter nick name: ";
@@ -46,4 +45,3 @@ void    Contact::insertContact() {
     std::cout << "Enter darkest secret: ";
     if (!std::getline(std::cin, darkestSecret)) { std::cout << std::endl; exit(0); }
 }
-

@@ -1,13 +1,14 @@
-SRC = megaphone.cpp
+SRC = ./src/Account.cpp ./src/tests.cpp
+INCLUDE = ./includes/Account.hpp
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
-NAME = megaphone
+NAME = program
 
 OBJ = ${SRC:.cpp=.o}
 
 all: ${NAME}
 
-${NAME}: ${OBJ}
+${NAME}: ${OBJ} ${INCLUDE}
 		${CC} ${CPPFLAGS} ${OBJ} -o ${NAME}
 
 clean:

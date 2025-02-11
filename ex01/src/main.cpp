@@ -17,7 +17,7 @@ int main() {
         else if (command == "EXIT")
             return 0;
         else
-            std::cout << "Invalid! 'ADD' or 'SEARCH' or 'EXIT'\n";
+            std::cout << "Invalid! 'ADD' 'SEARCH' or 'EXIT'\n";
     }
     return 0;
 }
