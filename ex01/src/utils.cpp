@@ -35,11 +35,7 @@ bool    ft_isValid(std::string input) {
         if (number > 8)
             return false;
     }
-    while (isblank(input[i]))
-            i++;
-    if (!input[i])
-        return true;
-    return (false);
+    return (true);
 }
 
 void printSpaces(int n) {
