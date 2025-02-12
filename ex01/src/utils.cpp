@@ -3,10 +3,19 @@
 bool    ft_isdigit(std::string input) {
     if (input.empty())
         return false;
-    for (int i = 0; i < (int)input.length(); i++) {
-        if (!isdigit(input[i]) && !isblank(input[i]))
+    int i;
+    for (i = 0; i < (int)input.length(); i++)
+        if (!isblank(input[i]))
+            break ;
+    if (!input[i])
+        return false;
+    int k;
+    for (k = i; k < (int)input.length(); k++)
+        if (!isdigit(input[k]))
+            break ;
+    for (i = k; i < (int)input.length(); i++)
+        if (!isblank(input[i]))
             return false;
-    }
     return true;
 }
 

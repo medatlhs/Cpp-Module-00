@@ -2,7 +2,7 @@
 
 void    PhoneBook::addContact() {
     if (totalContacts >= MAXCONTACTS)
-        std::cout << "Max Contacts Reaced. Replacing Contact " << index << "." << std::endl;
+        std::cout << "Max Contacts Reached. Replacing Contact " << index + 1 << "." << std::endl;
     contacts[index].insertContact();
     index = (index + 1) % MAXCONTACTS;
     totalContacts += 1;
@@ -20,12 +20,12 @@ void    PhoneBook::requestIndex()
             std::cout << std::endl; exit(0);
         }
         if (!ft_isdigit(input) || !ft_isValid(input)) {
-            std::cout << "index is not valid!" << std::endl;
+            std::cout << "Invalid index!" << std::endl;
             continue;
         }
-        this->requestedIndex = std::stoi(input);
-        if (this->requestedIndex > totalContacts || !this->requestedIndex) {
-            std::cout << "index is not valid!" << std::endl;
+        requestedIndex = std::stoi(input);
+        if (requestedIndex > totalContacts || !requestedIndex) {
+            std::cout << "Invalid index!" << std::endl;
             continue;
         }
         break;
@@ -41,6 +41,6 @@ void    PhoneBook::searchContact() {
     for (int i = 0; i < MAXCONTACTS && i < totalContacts; i++) {
         contacts[i].displayOnTable(i + 1);
     }
-    this->requestIndex();
-    contacts[this->requestedIndex - 1].displayFullContact();
+    requestIndex();
+    contacts[requestedIndex - 1].displayFullContact();
 }

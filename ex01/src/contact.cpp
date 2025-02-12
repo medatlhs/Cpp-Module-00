@@ -31,16 +31,16 @@ std::string getInput(std::string prompt, int flag)
     while (true)
     {
         std::cout << prompt;
-        if (!std::getline(std::cin, input)) {
+        if (!std::getline(std::cin, input)){
             std::cout << std::endl; exit(0);
         }
-        if (input.empty() && (flag || flag == 2)) {
+        if (input.empty() && (flag || flag == 2)){
             std::cout << "Can't be empty!\n"; continue;
         }
         if (flag == 2)
         {
             if (!ft_isdigit(input)){ 
-                std::cout << "Invlaid phone number!\n"; continue ;
+                std::cout << "Invlaid phone number!\n"; continue;
             }
         }
         break ;

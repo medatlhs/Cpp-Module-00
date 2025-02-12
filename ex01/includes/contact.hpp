@@ -18,6 +18,6 @@ class Contact {
         void displayOnTable(int index);
 };
 
-void printSpaces(int n);
+void        printSpaces(int n);
 
 #endif
